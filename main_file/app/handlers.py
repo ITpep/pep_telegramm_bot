@@ -309,7 +309,17 @@ async def que_r6(callback: CallbackQuery):
 
 @router.callback_query(F.data == "r7_q")
 async def que_r7(callback: CallbackQuery):
-    await callback.message.answer("")
+    await callback.message.answer("Когда мы оказываем консультации:\n\n\n "
+                                  "✅Когда хочется разумно подойти к затратам на электрическую "
+                                  "энергию - мы анализируем вашу ситуацию и предлагаем направления экономии расходов.\n\n"
+                                  "✅Когда вам предстоит взаимодействие с сетевыми или сбытовыми организациями "
+                                  "(например, необходимо увеличить электрическую мощность и непонятно с чего начать) - мы "
+                                  "поможем вам разобраться с алгоритмом подачи заявки или выполнения технических условий, "
+                                  "выданных сетевой организацией, согласования в соответствующих организациях  самостоятельно "
+                                  "или представляя ваши интересы в профильных организациях.\n\n"
+                                  "✅В вопросах отстаивания ваших прав как потребителя за счет использования норм "
+                                  "действующего законодательства с целью сохранения Вашей экономики при "
+                                  "взаимодействии с электросетевыми и сбытовыми организациями")
     await callback.message.answer("Если у Вас остались вопросы, то Вы можете позвонить по одному из телефонов:\n"
                                   "+7(921)390-77-40; +7(812)313-66-40\n\n"
                                   "Или написать на почту: info@pep.spb.ru.")
@@ -387,7 +397,10 @@ async def light_works(callback: CallbackQuery):
 @router.callback_query(F.data == "consultation_about_electricity")
 async def consultation(callback: CallbackQuery):
     await callback.message.answer("Для экономии Ваших средств наша компания оказывает консультации по оптимизации затрат на электроэнергию, "
-                          "которые включают в себя рекомендации по выбору оптимального тарифа, а также инженерно-экономические рекомендации", reply_markup=kb.sub_services_6)
+                          "которые включают в себя рекомендации по выбору оптимального тарифа, а также инженерно-экономические рекомендации")
+    await callback.message.answer("В процессе консультирования обсуждается специфика конкретно Вашей ситуации. В связи с этим цена консультации определяется в индивидуальном порядке\n\n"
+                                  "Для получения услуги просим Вас обратиться по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+                                  "Или отправьте Ваш запрос на почту: info@pep.spb.ru")
 
 
 @router.callback_query(F.data == "tech_connect_to_electric_net")
@@ -396,6 +409,326 @@ async def tech_connect(callback: CallbackQuery):
                           "Включает в себя не только физическое присоединение, а также соблюдение всех технических, правовых требований, установленных регулирующими органами. "
                           "Важными аспектами технологического присоединения являются безопасность, надежность, а также эффективность энергоснабжения. "
                           "Мы работаем с 2008 года. Гарантируем высокий профессионализм сотрудников.", reply_markup=kb.sub_services_8)
+
+
+
+
+
+#Функции для универсального ответа пользователю, когда он нажал на услугу и на ее цену
+#Универсальные ответы на вопросы для заинтересовавшихся подуслугой эмр в квартирах и домах
+@router.callback_query(F.data == "montage_automat")
+async def answer_1(callback: CallbackQuery):
+    await callback.message.answer("Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+                                  "Или написать на почту: info@pep.spb.ru\n\n"
+                                  "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "connect_household")
+async def answer_2(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "changing_lamps")
+async def answer_3(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "changing_outlets")
+async def answer_4(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "changing_switches")
+async def answer_5(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "montage_electrical_panel")
+async def answer_6(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "changing_wiring_kitchen")
+async def answer_7(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "electric_installation_houses")
+async def answer_8(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "electric_installation_flats")
+async def answer_9(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+
+#Универсальные ответы на вопросы для заинтересовавшихся подуслугой эмр в кафе и ресторанах
+@router.callback_query(F.data == "montage_light")
+async def answer_10(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "electrical_inlines")
+async def answer_11(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+
+@router.callback_query(F.data == "building_panels")
+async def answer_12(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+#Универсальные ответы на вопросы для заинтересовавшихся подуслугой увеличения электрической мощности
+@router.callback_query(F.data == "receiving_certificates")
+async def answer_13(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "complete_tech")
+async def answer_14(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "project_one_line_system")
+async def answer_15(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "receiving_tech")
+async def answer_16(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+
+@router.callback_query(F.data == "ready_documents")
+async def answer_17(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+#Универсальные ответы на вопросы для заинтересовавшихся подуслугой эмр на торговых и промышленных объектах
+@router.callback_query(F.data == "montage_lights")
+async def answer_18(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "to_do_electrical_inlines")
+async def answer_19(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "build_electric")
+async def answer_20(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "build_and_montage")
+async def answer_21(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "montage_airlines")
+async def answer_22(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "to_do_lines")
+async def answer_23(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+#Универсальные ответы на вопросы для заинтересовавшихся подуслугой проектирования
+@router.callback_query(F.data == "grounding")
+async def answer_24(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "lightning_protection")
+async def answer_25(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "project_house")
+async def answer_26(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "project_out_light")
+async def answer_27(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "project_in_electro")
+async def answer_28(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "project_out_electro")
+async def answer_29(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+#Универсальные ответы на вопросы для заинтересовавшихся подуслугой монтажа освещения
+@router.callback_query(F.data == "in_villages")
+async def answer_30(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "light_of_buildings")
+async def answer_31(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+
+@router.callback_query(F.data == "out_lighting")
+async def answer_32(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+#Универсальные ответы на вопросы для заинтересовавшихся подуслугой технологического присоединения
+@router.callback_query(F.data == "receive_contract_electro")
+async def answer_33(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "receive_certificates")
+async def answer_34(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "ready_tech")
+async def answer_35(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "create_project")
+async def answer_36(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "tech_conditions")
+async def answer_37(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
+@router.callback_query(F.data == "connection_to_electro")
+async def answer_38(callback: CallbackQuery):
+    await callback.message.answer(
+        "Если Вам необходима данная услуга, то Вы можете позвонить по телефону: +7(921)390-77-40; +7(812)313-66-40\n"
+        "Или написать на почту: info@pep.spb.ru\n\n"
+        "Будем рады Вам помочь!")
+
+
 
 
 
